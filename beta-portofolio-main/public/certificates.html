@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sertifikat Saya - Devia</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-center py-10">
+
+  <!-- Judul dengan animasi -->
+  <h1 class="text-3xl font-bold mb-10 text-black animate-bounce">📜 Sertifikat Saya</h1>
+
+  <!-- Grid Sertifikat -->
+  <div class="grid md:grid-cols-2 gap-8 px-6">
+    <!-- UI/UX -->
+    <div class="bg-yellow-50 rounded-xl shadow-xl p-4 hover:shadow-yellow-400 transition cursor-pointer">
+      <h2 class="text-lg font-semibold mb-2">UI/UX</h2>
+      <img src="/assets/sertifikat-acp-uiux-page-001.jpg" alt="Sertifikat UI/UX" class="rounded-lg mx-auto shadow transform transition duration-300 hover:scale-105">
+    </div>
+
+    <!-- ACP AXIOO -->
+    <div class="bg-yellow-50 rounded-xl shadow-xl p-4 hover:shadow-yellow-400 transition cursor-pointer">
+      <h2 class="text-lg font-semibold mb-2">ACP AXIOO</h2>
+      <img src="/assets/-certificate-ACP1 Hardware-19-07-2025-01-07-37-page-001.jpg" alt="Sertifikat ACP Hardware" class="rounded-lg mx-auto shadow transform transition duration-300 hover:scale-105">
+    </div>
+
+    <!-- Web Programming -->
+    <div class="bg-yellow-50 rounded-xl shadow-xl p-4 hover:shadow-yellow-400 transition cursor-pointer">
+      <h2 class="text-lg font-semibold mb-2">Web Programming</h2>
+      <img src="/assets/Sertifikat Web programming-page-001.jpg" alt="Sertifikat Web Programming" class="rounded-lg mx-auto shadow transform transition duration-300 hover:scale-105">
+    </div>
+
+    <!-- Mobile App Development -->
+    <div class="bg-yellow-50 rounded-xl shadow-xl p-4 hover:shadow-yellow-400 transition cursor-pointer">
+      <h2 class="text-lg font-semibold mb-2">Mobile App Development</h2>
+      <img src="/assets/Sertifikat Mobile app Development-page-001.jpg" alt="Sertifikat Mobile App Development" class="rounded-lg mx-auto shadow transform transition duration-300 hover:scale-105">
+    </div>
+
+    <!-- ACP Python -->
+    <div class="bg-yellow-50 rounded-xl shadow-xl p-4 md:col-span-2 hover:shadow-yellow-400 transition cursor-pointer">
+      <h2 class="text-lg font-semibold mb-2">ACP Python</h2>
+      <img src="/assets/Sertifikat ACP python-page-001.jpg" alt="Sertifikat ACP Python" class="rounded-lg mx-auto shadow transform transition duration-300 hover:scale-105">
+    </div>
+  </div>
+
+  <!-- Kembali ke Portfolio -->
+  <a href="/" class="inline-block mt-10 text-yellow-400 hover:text-white font-semibold underline">
+    ← Kembali ke Portfolio
+  </a>
+
+  <!-- Modal Sertifikat -->
+  <div id="modal" class="fixed inset-0 bg-black bg-opacity-70 hidden items-center justify-center z-50">
+    <div class="bg-white p-6 rounded-3xl max-w-3xl w-full relative shadow-2xl">
+      <span id="close" class="absolute top-2 right-4 text-2xl cursor-pointer hover:text-black">✖</span>
+      <img id="modal-img" src="" alt="Sertifikat" class="rounded-lg w-full object-contain">
+    </div>
+  </div>
+
+  <!-- Script Modal -->
+  <script>
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+    const close = document.getElementById('close');
+
+    document.querySelectorAll('.grid img').forEach(img => {
+      img.addEventListener('click', () => {
+        modalImg.src = img.src;
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      });
+    });
+
+    close.addEventListener('click', () => {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    });
+
+    // Klik di luar modal untuk menutup
+    modal.addEventListener('click', (e) => {
+      if(e.target === modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    });
+  </script>
+
+</body>
+</html>
